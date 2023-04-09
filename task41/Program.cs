@@ -5,7 +5,13 @@
 
 
 Console.Write("Введите количество затребованных чисел: ");
-int M = int.Parse(Console.ReadLine());
+bool isParsed = int.TryParse(Console.ReadLine(), out int M);
+
+if (!isParsed)
+{
+   Console.Write("Введено не число");
+   return;
+}
 
 int[] array;
 array = GenerateArray(M);
